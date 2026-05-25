@@ -1,1 +1,4 @@
 ResourceDB.db
+__pycache__/
+.idea/
+config.json

@@ -1,0 +1,4 @@
+{
+    "db": "ResourceDB.db",
+    "secret_key": "secretKey"
+}
