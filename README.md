@@ -1,1 +1,1 @@
-"# EducateLamp" 
+# EducateLamp

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class="flashes">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+<div>
+    <form action="/register" method="post">
+        <label for="firstname">First Name:</label>
+        <input required type="text" name="firstname" id="firstname">
+        <label for="firstname">Last Name:</label>
+        <input required type="text" name="lastname" id="lastname">
+        <label for="firstname">Teacher Code:</label>
+        <input required type="text" name="teachercode" id="teachercode" maxlength="3">
+        <label for="firstname">Password:</label>
+        <input required type="password" name="password" id="password">
+        <label for="teachertype">Teacher Type:</label>
+        <select name="teachertype" id="teachertype">
+            {% for i in TeacherTypes %}
+            <option value="{{i['TypeCode']}}">{{i['TypeName']}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Sign Up">
+    </form>
+</div>
+
+<div>
+    <form action="/login" method="post">
+        <label for="teachercode">Teacher Code:</label>
+        <input type="text" name="teachercode" id="teachercode" maxlength="3" required>
+        <label for="passwordLogin">Password</label>
+        <input type="password" name="password" id="passwordLogin">
+        <input type="submit" value="Login">
+    </form>
+</div>
+{% endblock %}
